@@ -1,42 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Algorithm Visualizer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <h1 class="navbar-brand">Sorting Algorithm Visualizer</h1>
-            <button id="newArrayBtn" class="btn btn-light">Generate New Array</button>
-            <button id="bubbleSortBtn" class="btn btn-light">Bubble Sort</button>
-            <button id="selectionSortBtn" class="btn btn-light">Selection Sort</button>
-            <button id="insertionSortBtn" class="btn btn-light">Insertion Sort</button>
-            <button id="quickSortBtn" class="btn btn-light">Quick Sort</button>
-            <button id="mergeSortBtn" class="btn btn-light">Merge Sort</button>
-            <span class="bars-options">
-                <!-- Input for number of bars -->
-                <label style="color: white;" for="arr_sz">Number of Bars: </label>
-                <input id="arr_sz" type="range" min="20" max="120" step="1" value="60">
-                <!-- Input for speed -->
-                <label for="speed">Speed:</label>
-                <select id="speed" class="form-select form-select-sm">
-                    <option value="0" selected>Slow</option>
-                    <option value="1">Medium</option>
-                    <option value="2">Fast</option>
-                </select>
-            </span>
-        </div>
-    </nav>
 
-    <div class="container bars-container" id="barsContainer">
-        <!-- Bars will be added here dynamically -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Sorting Visualizer</title>
+
+    <!-- External JS -->
+    <script async defer src="index.js"></script>
+
+   
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand appName" href="#">Sorting Visualizer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <li>
+                        <label for="arrayRange" class="form-label text-white fw-bold">Array Size</label>
+                        <input type="range" min="10" max="40" value="30" id="arrayRange"
+                            onchange="arraySizeChange(this.value)">
+                    </li>
+                    <li>
+                        <label for="speedRange" class="form-label text-white fw-bold">Speed</label>
+                        <input type="range" min="50" max="1000" value="500" id="speedRange"
+                            onchange="speedChange(this.value)">
+                    </li>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav navItemsList">
+                        <li class="nav-item">
+                            <a class="nav-link newArray toChange" aria-current="page" href="#">Generate New Array</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link newArray toChange" aria-current="page" href="#" id="reset">RESET</a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active disabled" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Bubble Sort</a>
+                            <ul class="dropdown-menu navDropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Insertion Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Selection Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Heap Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Quick Sort</a></li>
+                                <li><a class="dropdown-item" href="#">Merge Sort</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Bars -->
+    <div class="barsCon">
+
+
+    </div>
+
+    <!-- Sorting Button -->
+
+    <div class="container">
+    <!-- Empty div to push the button to the bottom of the page -->
+    <div style="height: 100vh;"></div>
+    
+    <!-- Button positioned at the bottom center -->
+    <div class="row justify-content-center fixed-bottom mb-5">
+        <button class="btn btn-outline-light rounded-pill btn-lg" id="sortBtn">Sort</button>
+    </div>
+   </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+
 </body>
+
 </html>
