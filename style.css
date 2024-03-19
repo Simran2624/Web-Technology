@@ -58,7 +58,16 @@ body {
   font-weight: bold;
   width: 225px;
 }
-
+.array{
+  font-size: 1.80rem;
+  margin :5% 1% ;
+  padding: 0.10 rem;
+  border-radius: 30px ;
+  /* box-shadow: 5px 2px #d8bdbd; */
+  color: aliceblue;
+  width: auto;
+  text-align: left;
+}
 /* .bar:hover {
   transition: 0.3s ease-out;
   box-shadow: 10px 10px 10px 10px purple;
