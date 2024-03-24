@@ -9,7 +9,7 @@ function arraySizeChange(n){
     array.push(Math.floor(Math.random() * (n+20 - 1 + 1)) + 1);
     text+= ` ${array[n-1]}`
 
-    console.log(array);
+    console.log(array); 
     
     arrayHeading.textContent = text;
 }
