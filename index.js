@@ -153,7 +153,7 @@ async function quickSort() {
 createBars();
 
 // Event listener for "Generate New Array" button
-const newArrayBtn = document.getElementById("newArrayBtn");
+const newArrayBtn = document.getElementById(" ");
 newArrayBtn.addEventListener("click", generateNewArray);
 
 // Event listeners for sorting buttons
