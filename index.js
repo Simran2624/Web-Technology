@@ -112,6 +112,9 @@ async function quickSort() {
         let pivot = parseInt(bars[high].style.height);
         let i = low - 1;
 
+        // Highlight pivot bar in a different color
+        bars[high].style.backgroundColor = "#ffc107"; // Yellow for pivot
+
         for (let j = low; j < high; j++) {
             bars[j].style.backgroundColor = "#ff4136"; // Red color for comparison
             if (parseInt(bars[j].style.height) < pivot) {
@@ -122,6 +125,10 @@ async function quickSort() {
         }
         await swapBars(bars[i + 1], bars[high]);
         bars[high].style.backgroundColor = "#28a745"; // Green for sorted bar
+
+        // Reset pivot color after sorting
+        bars[i + 1].style.backgroundColor = "#28a745"; // Green for sorted bar
+
         return i + 1;
     }
 
